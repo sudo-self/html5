@@ -21,13 +21,119 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
 </head>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Template Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        h1, h2, h3, h4 {
+            margin-top: 0;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        code {
+            display: block;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            position: relative;
+        }
+        code button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
+    <header>
+        <h1>Welcome to HTML5 Webpack!</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Terminal</h3>
+            <p>Run the following command to clone the repository:</p>
+            <code id="code1">git clone https://github.com/sudo-self/html5.git <button onclick="copyToClipboard('code1')">Copy</button></code>
+        </section>
 
-  <!-- Add your site or application content here -->
-  <p>This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+        <section>
+            <h3>Navigate to the Project Directory</h3>
+            <p>Change to the project directory:</p>
+            <code id="code2">cd html5 <button onclick="copyToClipboard('code2')">Copy</button></code>
+        </section>
 
+        <section>
+            <h3>Install and Start</h3>
+            <p>Install the necessary packages:</p>
+            <code id="code3">npm install <button onclick="copyToClipboard('code3')">Copy</button></code>
+            <p>Run the following command to start the application:</p>
+            <code id="code4">npm start <button onclick="copyToClipboard('code4')">Copy</button></code>
+        </section>
+
+        <section>
+            <h3>Project is Live</h3>
+            <p>Access the application at the following link:</p>
+            <p><a href="http://localhost:8080/">localhost:8080</a></p>
+        </section>
+
+        <section>
+            <h4>Development Server</h4>
+            <p>Start the development server with Webpack:</p>
+            <code id="code5">webpack serve --open --config webpack.config.dev.js <button onclick="copyToClipboard('code5')">Copy</button></code>
+        </section>
+    </main>
+    <footer>
+        <p>avaliable on<a href="https://github.com/sudo-self/html5" style="color: white;">GitHub</a></p>
+    </footer>
+    <script>
+        function copyToClipboard(id) {
+            var codeBlock = document.getElementById(id);
+            var text = codeBlock.textContent.replace(" Copy", "");
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Copied to clipboard');
+            }, function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
 </body>
-
 </html>
